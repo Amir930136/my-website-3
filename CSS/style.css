@@ -204,20 +204,4 @@ body {
 }
 
 ====================================
-
-/* تحديد حجم الـ Container الخاص بالصورة */
-.profile-img-wrapper {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  border: 2px solid #ffb86a !important;
-}
-
-/* تحجيم الصورة نفسها جوه الـ Container */
-.profile-avatar-img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-}
+ 
