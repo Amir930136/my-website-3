@@ -96,3 +96,17 @@ body.bg-light-custom {
   background-color: #ffd8c2;
   border-radius: 4px;
 }
+====================
+
+ 
+.tab-content {
+  max-height: 200px !important;
+  overflow-y: auto !important;
+}
+
+ 
+.right-side, .col-md-6 {
+  display: flex !original;
+  flex-direction: column;
+  justify-content: space-between;
+}
