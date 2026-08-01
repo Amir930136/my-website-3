@@ -1,207 +1,98 @@
-/* ===================================================
-   1. GLOBAL STYLES & RESET
-   =================================================== */
-* {
-  box-sizing: border-box;
+/* =========================================
+   COLOR VARIABLES & GLOBAL STYLES
+   ========================================= */
+:root {
+  --primary-orange: #ff5e00;
+  --soft-orange: #fff2ea;
+  --soft-blue: #eef2ff;
+  --bg-beige: #fffdfa;
 }
 
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f8f9fa;
+body.bg-light-custom {
+  background-color: #fcf8f3 !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* ===================================================
-   2. NAVBAR & HEADER
-   =================================================== */
-.navbar {
-  background-color: #ffffff;
+/* Custom Utilities */
+.text-orange {
+  color: var(--primary-orange) !important;
 }
 
-.logo .f-logo {
-  width: 45px;
-  height: 45px;
-  background-color: #ff6b00;
+.bg-orange {
+  background-color: var(--primary-orange) !important;
 }
 
-.navbar .icon-span {
-  color: #ff6b00;
+.bg-soft-orange {
+  background-color: var(--soft-orange) !important;
 }
 
-.navbar .span2-style {
-  font-weight: 500;
-  color: #333333;
+.bg-soft-blue {
+  background-color: var(--soft-blue) !important;
 }
 
-/* صورة البروفايل في الناف بار */
-.profile-img {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  object-fit: cover !important;
-  border: 2px solid #ffb86a !important;
+.bg-beige {
+  background-color: var(--bg-beige) !important;
+  border: 1px solid #f9efe3;
 }
 
-/* ===================================================
-   3. HERO / RECIPE SECTION
-   =================================================== */
-.hero-section .container-lg {
-  max-width: 960px !important;
+.btn-orange {
+  background-color: var(--primary-orange);
+  border: none;
+  transition: all 0.2s ease;
 }
 
-.hero-section .parent {
-  min-height: 520px;
-  border: 1px solid #ffedd4;
+.btn-soft-orange {
+  background-color: var(--soft-orange);
+  border: none;
 }
 
-/* Left Side - Image & Badges */
-.hero-section .left-side {
-  min-height: 380px;
-  position: relative;
-}
-
-.hero-section .left-side .image {
-  height: 100%;
-  min-height: 380px;
-}
-
-.hero-section .left-side img#recipeImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Rating Badge (Top Left) */
-.hero-section .left-side .p-top {
-  top: 15px;
-  left: 15px;
-  z-index: 2;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* Bottom Info Overlay (Prep, Cook, Servings) */
-.hero-section .left-side .bottom-info {
-  bottom: 15px;
-  width: 88%;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
-  border: 1px solid #f3f4f6;
-}
-
-.hero-section .left-side .bottom-info i {
-  color: #ff6b00;
-  font-size: 1.1rem;
-}
-
-.hero-section .left-side .bottom-info .p1-style {
+.extra-small {
   font-size: 0.75rem;
 }
 
-.hero-section .left-side .bottom-info .p2-style {
-  font-size: 0.85rem;
-}
-
-/* ===================================================
-   4. RIGHT SIDE - DETAILS & TABS
-   =================================================== */
-.right-side .text1-style span {
-  font-size: 0.8rem;
-  font-weight: 600;
-  background-color: #fff3e6;
-  color: #ff6b00;
-}
-
-.right-side .icons-style span {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #e5e7eb;
-  color: #6b7280;
+.cursor-pointer {
   cursor: pointer;
 }
 
-/* Warning Box */
-.right-side .warning {
-  background-color: #fff8f0;
-  border: 1px solid #ffe8d1;
-  color: #d97706;
+/* =========================================
+   HERO / CARD SECTION STYLES
+   ========================================= */
+.hero-left img {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
-.right-side .warning i {
-  font-size: 1.25rem;
+@media (max-width: 767.98px) {
+  .hero-left img {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1rem;
+    min-height: 280px !important;
+  }
 }
 
-.right-side .warning .text-style {
-  font-size: 0.9rem;
-  color: #b45309;
-}
-
-.right-side .warning .text2-style {
-  font-size: 0.8rem;
-  color: #d97706;
-}
-
-/* Nav Tabs */
-.right-side .nav-underline .nav-link {
-  color: #6b7280;
+/* =========================================
+   CUSTOM NAV TABS
+   ========================================= */
+.custom-tab {
+  color: #6c757d !important;
   font-weight: 500;
-  font-size: 0.9rem;
-  border-bottom: 2px solid transparent;
+  font-size: 0.875rem;
+  background: transparent !important;
+  border-bottom: 2px solid transparent !important;
 }
 
-.right-side .nav-underline .nav-link.active {
-  color: #ff6b00;
-  border-bottom-color: #ff6b00;
+.custom-tab.active {
+  color: var(--primary-orange) !important;
+  border-bottom: 2px solid var(--primary-orange) !important;
   font-weight: 600;
 }
 
-/* Tab Content Box */
-.hero-section .tab-content {
-  max-height: 200px;
-  overflow-y: auto;
+/* Custom Scrollbar for list */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
 }
 
-.tab-pane .num-style {
-  width: 24px;
-  height: 24px;
-  min-width: 24px;
-  background-color: #ff6b00;
-  font-size: 0.75rem;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ffd8c2;
+  border-radius: 4px;
 }
-
-#pane-ingredients .parent {
-  background-color: #f9fafb;
-}
-
-#pane-nutrition .lines {
-  background-color: #f9fafb;
-  font-size: 0.85rem;
-}
-
-#pane-nutrition .span2-style {
-  color: #ff6b00;
-}
-
-#pane-chef .parent div {
-  background-color: #f9fafb;
-}
-
-#pane-chef span {
-  width: 22px;
-  height: 22px;
-  background-color: #22c55e;
-  color: white;
-  font-size: 0.7rem;
-}
-
-/* Action Button */
-.right-side #button {
-  background-color: #ff6b00;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 12px;
-}
-
-====================================
- 
