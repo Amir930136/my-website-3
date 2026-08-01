@@ -3,259 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="What's For Dinner Today - Your daily meal inspiration">
   <title>What's For Dinner</title>
   
-  <!-- Favicon -->
   <link rel="icon" href="images/imgi_1_favicon.png" type="image/png">
-  
-  <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/media.css">
 </head>
 
-<body class="bg-white" data-bs-spy="scroll" data-bs-target="#nav" data-bs-offset="70">
-  <!-- Header -->
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md shadow-sm border-bottom border-body p-3 px-4" id="nav">
-      <div class="container-xl">
-        <div class="logo d-flex align-items-center column-gap-3 fs-4 fw-semibold me-5">
-          <div class="f-logo p-3 text-light d-flex align-items-center justify-content-center rounded-circle" id="logoIcon">
-            <i class="fa-solid fa-utensils fs-5"></i>
-          </div>
-          <div class="logo-text">
-            <span class="d-block h5 p-0 m-0 fw-bold">What's For Dinner</span>
-            <p class="p-0 m-0 fs-6 text-muted fw-normal">Your daily meal inspiration</p>
-          </div>
+<body class="bg-light-custom">
+
+  <!-- Header / Navbar -->
+  <header class="bg-white border-bottom py-2 px-4 shadow-sm">
+    <div class="container-xl d-flex align-items-center justify-content-between">
+      
+      <!-- Logo -->
+      <div class="d-flex align-items-center gap-3">
+        <div class="logo-icon bg-orange text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+          <i class="fa-solid fa-utensils fs-6"></i>
         </div>
-        <button class="navbar-toggler border-0" id="navToggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars" id="togglerIcon"></i>
-        </button>
-        <div class="collapse navbar-collapse mt-3 mt-md-0" id="navbarSupportedContent">
-          <ul class="d-md-flex items align-items-center gap-4 m-0 ms-auto list-unstyled" id="navList">
-            <li class="item-1 d-flex align-items-center gap-2">
-              <span class="icon-span fs-5"><i class="fa-solid fa-bookmark"></i></span>
-              <span class="text-span span2-style">Saved Recipes</span>
-            </li>
-            <li class="item-1 d-flex align-items-center gap-2">
-              <span class="icon-span fs-5"><i class="fa-solid fa-clock-rotate-left"></i></span>
-              <span class="text-span span2-style">Recent</span>
-            </li>
-            <li class="item-1 d-flex align-items-center gap-2">
-              <span class="icon-span fs-5"><i class="fa-solid fa-gear"></i></span>
-              <span class="text-span fs-6">Settings</span>
-            </li>
-          <li class="item-2 d-flex align-items-center gap-2">
-  <span class="rounded-circle d-inline-block overflow-hidden" style="width: 38px; height: 38px; min-width: 38px; min-height: 38px;">
-    <img src="images/imgi_1_avatar-4.jpg" alt="User Profile" style="width: 100% !important; height: 100% !important; object-fit: cover !important;" class="rounded-circle border border-warning border-2">
-  </span>
-  <span class="text-span">Profile</span>
-</li>
-          </ul>
+        <div>
+          <h1 class="h6 m-0 fw-bold text-dark">What's For Dinner</h1>
+          <p class="m-0 text-muted small" style="font-size: 0.75rem;">Your daily meal inspiration</p>
         </div>
       </div>
-    </nav>
+
+      <!-- Navigation Icons / Links -->
+      <div class="d-flex align-items-center gap-4">
+        <div class="d-flex align-items-center gap-2 text-secondary cursor-pointer">
+          <i class="fa-solid fa-bookmark fs-6"></i>
+          <span class="d-none d-md-inline small fw-semibold">Saved Recipes</span>
+        </div>
+        <div class="d-flex align-items-center gap-2 text-secondary cursor-pointer">
+          <i class="fa-solid fa-clock-rotate-left fs-6"></i>
+          <span class="d-none d-md-inline small fw-semibold">Recent</span>
+        </div>
+        <div class="d-flex align-items-center gap-2 text-secondary cursor-pointer">
+          <i class="fa-solid fa-gear fs-6"></i>
+          <span class="d-none d-md-inline small fw-semibold">Settings</span>
+        </div>
+        <div class="d-flex align-items-center gap-2 cursor-pointer ms-2">
+          <img src="images/imgi_1_avatar-4.jpg" alt="Profile" style="width: 34px; height: 34px; object-fit: cover;" class="rounded-circle border border-warning">
+        </div>
+      </div>
+
+    </div>
   </header>
 
-  <!-- Main -->
-  <main id="main" class="d-flex align-items-center justify-content-center min-vh-100 py-4">
-    <!-- Hero - Recipe -->
-    <section class="hero-section px-3 px-md-4 w-100">
-      <div class="container-lg p-0">
-        <div id="rowData" class="row parent rounded-4 bg-white overflow-hidden shadow-lg m-0">
+  <!-- Main Content -->
+  <main class="d-flex align-items-center justify-content-center py-5">
+    <div class="container-lg" style="max-width: 900px;">
+      
+      <!-- Recipe Main Card -->
+      <div class="card border-0 rounded-4 shadow-lg overflow-hidden">
+        <div class="row g-0">
           
-          <!-- Left Side (Image & Meta) -->
-          <div class="left-side p-0 position-relative col-lg-6">
-            <div class="p-top bg-white px-3 py-2 rounded-5 d-flex align-items-center justify-content-center column-gap-2 position-absolute shadow-sm">
-              <i class="fa-solid fa-star text-warning"></i>
-              <span class="span-1" id="recipeRating">4.5 <span class="review text-muted">(367 reviews)</span></span>
-              <span class="span-2 text-muted" id="recipeReviews"></span>
-            </div>
+          <!-- Left Side (Image & Floating Badges) -->
+          <div class="col-md-6 position-relative hero-left">
             
-            <div class="image w-100 h-100">
-              <img class="w-100 h-100 object-fit-cover" id="recipeImg" src="images/IMG-20251129-WA0023.jpg" alt="Recipe Preview Image">
+            <!-- Rating Badge (Top Left) -->
+            <div class="position-absolute top-0 start-0 m-3 bg-white px-3 py-1 rounded-pill shadow-sm d-flex align-items-center gap-2" style="z-index: 2;">
+              <i class="fa-solid fa-star text-warning small"></i>
+              <span class="fw-bold small" id="recipeRating">4.8 <span class="text-muted fw-normal">(445 reviews)</span></span>
             </div>
 
-            <div class="bottom-info d-flex align-items-center justify-content-around rounded-4 px-3 py-2 px-lg-4 py-lg-3 position-absolute translate-middle-x start-50 shadow-sm" id="bottomInfo">
-              <div class="info text-center">
-                <i class="fa-solid fa-clock mb-1"></i>
-                <p class="p1-style text-muted p-0 m-0">Prep Time</p>
-                <p class="p2-style text-black fw-bolder p-0 m-0" id="prepTime">15 min</p>
+            <!-- Main Image -->
+            <img id="recipeImg" src="images/IMG-20251129-WA0023.jpg" class="w-100 h-100 object-fit-cover" alt="Recipe Image" style="min-height: 420px;">
+
+            <!-- Bottom Floating Info Bar -->
+            <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 w-85 bg-white rounded-4 shadow-sm p-3 text-center d-flex justify-content-around align-items-center" style="z-index: 2; width: 88%;">
+              <div>
+                <i class="fa-solid fa-clock text-orange mb-1"></i>
+                <div class="text-muted extra-small">Prep Time</div>
+                <div class="fw-bold small text-dark" id="prepTime">20 min</div>
               </div>
-              <div class="info text-center">
-                <i class="fa-solid fa-fire-burner mb-1"></i>
-                <p class="p1-style text-muted p-0 m-0">Cook Time</p>
-                <p class="p2-style text-black fw-bolder p-0 m-0" id="cookTime">25 min</p>
+              <div class="border-start border-end px-3">
+                <i class="fa-solid fa-fire-burner text-orange mb-1"></i>
+                <div class="text-muted extra-small">Cook Time</div>
+                <div class="fw-bold small text-dark" id="cookTime">15 min</div>
               </div>
-              <div class="info text-center">
-                <i class="fa-solid fa-users mb-1"></i>
-                <p class="p1-style text-muted p-0 m-0">Servings</p>
-                <p class="p2-style text-black fw-bolder p-0 m-0" id="servings">4 people</p>
+              <div>
+                <i class="fa-solid fa-users text-orange mb-1"></i>
+                <div class="text-muted extra-small">Servings</div>
+                <div class="fw-bold small text-dark" id="servings">2 people</div>
               </div>
             </div>
+
           </div>
 
           <!-- Right Side (Details & Tabs) -->
-          <div class="right-side p-4 p-md-5 col-lg-6">
-            <!-- Text Top -->
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div>
-                <div class="text1-style mb-2">
-                  <span class="rounded-4 py-1 px-3 me-1" id="recipeLevel">Intermediate</span>
-                  <span class="rounded-4 py-1 px-3" id="recipeCategory">Asian</span>
+          <div class="col-md-6 p-4 p-lg-5 bg-white d-flex flex-column justify-content-between">
+            
+            <div>
+              <!-- Tags & Action Buttons -->
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div class="d-flex gap-2">
+                  <span class="badge bg-soft-orange text-orange rounded-pill px-3 py-2" id="recipeLevel">Intermediate</span>
+                  <span class="badge bg-soft-blue text-primary rounded-pill px-3 py-2" id="recipeCategory">Asian</span>
                 </div>
-                <div class="text2-style">
-                  <h1 class="fw-bold fs-3 mb-1" id="recipeTitle">Lemon Cake</h1>
-                  <p class="text-muted m-0" id="recipeDesc">Soft lemon cake with tangy glaze</p>
+                
+                <div class="d-flex gap-2">
+                  <button class="btn btn-soft-orange rounded-3 p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="fa-solid fa-bookmark text-orange"></i>
+                  </button>
+                  <button class="btn btn-soft-orange rounded-3 p-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="fa-solid fa-share-nodes text-orange"></i>
+                  </button>
                 </div>
               </div>
-              <div class="icons-style d-flex gap-2">
-                <span class="d-flex align-items-center justify-content-center rounded-3"><i class="fa-solid fa-bookmark"></i></span>
-                <span class="d-flex align-items-center justify-content-center rounded-3"><i class="fa-solid fa-share-nodes"></i></span>
-              </div>
-            </div>
 
-            <!-- Warning Message -->
-            <div class="warning d-flex align-items-center justify-content-start column-gap-3 rounded-3 p-3 mb-4" id="warning">
-              <span><i class="fa-solid fa-triangle-exclamation"></i></span>
-              <div id="warningTextBlock">
-                <p class="m-0 text-style fw-bold" id="alertTitle">Extended Preparation Time</p>
-                <p class="m-0 text2-style" id="alertDesc">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
-              </div>
-            </div>
+              <!-- Recipe Title & Description -->
+              <h2 class="h3 fw-bold text-dark mt-3 mb-1" id="recipeTitle">Pad Thai</h2>
+              <p class="text-muted small mb-4" id="recipeDesc">Popular Thai stir-fried noodles with shrimp and peanuts</p>
 
-            <!-- Tabs Nav -->
-            <div class="p-ul-style mb-3 border-bottom">
-              <ul class="d-flex justify-content-between nav nav-underline ul-style pb-2" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation" id="liIngredients">
-                  <button class="nav-link active p-0 pb-2" id="tabIngredients" data-bs-toggle="tab" data-bs-target="#pane-ingredients" type="button" role="tab">
+              <!-- Warning Message (Hidden by default or shown dynamically) -->
+              <div class="alert alert-warning border-0 rounded-3 d-flex align-items-center gap-2 p-2 mb-3 d-none" id="warning">
+                <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+                <div class="extra-small text-dark" id="alertDesc">Extended preparation required!</div>
+              </div>
+
+              <!-- Navigation Tabs -->
+              <ul class="nav nav-tabs border-bottom-0 gap-3 mb-3" id="recipeTabs" role="tablist">
+                <li class="nav-item">
+                  <button class="nav-link active custom-tab p-0 pb-2 border-0" id="tab-ingredients" data-bs-toggle="tab" data-bs-target="#pane-ingredients" type="button">
                     <i class="fa-solid fa-list-check me-1"></i> Ingredients
                   </button>
                 </li>
-                <li class="nav-item" role="presentation" id="liInstructions">
-                  <button class="nav-link p-0 pb-2" id="tabInstructions" data-bs-toggle="tab" data-bs-target="#pane-instructions" type="button" role="tab">
+                <li class="nav-item">
+                  <button class="nav-link custom-tab p-0 pb-2 border-0" id="tab-instructions" data-bs-toggle="tab" data-bs-target="#pane-instructions" type="button">
                     <i class="fa-solid fa-book-open me-1"></i> Instructions
                   </button>
                 </li>
-                <li class="nav-item" role="presentation" id="liNutrition">
-                  <button class="nav-link p-0 pb-2" id="tabNutrition" data-bs-toggle="tab" data-bs-target="#pane-nutrition" type="button" role="tab">
+                <li class="nav-item">
+                  <button class="nav-link custom-tab p-0 pb-2 border-0" id="tab-nutrition" data-bs-toggle="tab" data-bs-target="#pane-nutrition" type="button">
                     <i class="fa-solid fa-chart-pie me-1"></i> Nutrition
                   </button>
                 </li>
-                <li class="nav-item" role="presentation" id="liChef">
-                  <button class="nav-link p-0 pb-2" id="tabChef" data-bs-toggle="tab" data-bs-target="#pane-chef" type="button" role="tab">
+                <li class="nav-item">
+                  <button class="nav-link custom-tab p-0 pb-2 border-0" id="tab-chef" data-bs-toggle="tab" data-bs-target="#pane-chef" type="button">
                     <i class="fa-solid fa-lightbulb me-1"></i> Chef's Tips
                   </button>
                 </li>
               </ul>
+
+              <!-- Tab Content Area -->
+              <div class="tab-content" id="myTabContent">
+                
+                <!-- Ingredients Tab -->
+                <div class="tab-pane fade show active" id="pane-ingredients" role="tabpanel">
+                  <div class="bg-beige rounded-4 p-3 custom-scrollbar" style="max-height: 220px; overflow-y: auto;">
+                    <ul class="list-unstyled m-0 d-flex flex-column gap-2" id="ingredientsList">
+                      <li class="d-flex align-items-center gap-2 small text-secondary">
+                        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">1</span>
+                        <span>200g rice noodles</span>
+                      </li>
+                      <li class="d-flex align-items-center gap-2 small text-secondary">
+                        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">2</span>
+                        <span>200g shrimp, peeled</span>
+                      </li>
+                      <li class="d-flex align-items-center gap-2 small text-secondary">
+                        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">3</span>
+                        <span>2 eggs</span>
+                      </li>
+                      <li class="d-flex align-items-center gap-2 small text-secondary">
+                        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">4</span>
+                        <span>3 tablespoons tamarind paste</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Instructions Tab -->
+                <div class="tab-pane fade" id="pane-instructions" role="tabpanel">
+                  <div class="p-2 custom-scrollbar" id="instructionsList" style="max-height: 220px; overflow-y: auto;">
+                    <p class="small text-muted">Soak noodles in warm water for 30 minutes...</p>
+                  </div>
+                </div>
+
+                <!-- Nutrition Tab -->
+                <div class="tab-pane fade" id="pane-nutrition" role="tabpanel">
+                  <div class="row g-2 p-2">
+                    <div class="col-6 bg-light p-2 rounded-3 d-flex justify-content-between">
+                      <span class="small text-muted">Calories</span>
+                      <span class="small fw-bold text-orange">540 kcal</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chef Tips Tab -->
+                <div class="tab-pane fade" id="pane-chef" role="tabpanel">
+                  <div class="p-2">
+                    <p class="small text-muted"><i class="fa-solid fa-check text-success me-1"></i> Don't oversoak noodles or they'll be mushy</p>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
-            <!-- Tab Content -->
-            <div class="tab-content overflow-y-auto" id="pane-tabContent">
-              <!-- Ingredients -->
-              <div class="tab-pane card1-style fade show active" id="pane-ingredients" role="tabpanel" tabindex="0">
-                <div class="parent p-3 rounded-4">
-                  <ul class="m-0 list-unstyled d-flex flex-column gap-2" id="ingredientsList">
-                    <li id="li1OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">1</div>
-                      <span class="text-muted" id="ing1text">Flours</span>
-                    </li>
-                    <li id="li2OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">2</div>
-                      <span class="text-muted" id="ing2text">Lemon zest</span>
-                    </li>
-                    <li id="li3OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">3</div>
-                      <span class="text-muted" id="ing3text">Eggs</span>
-                    </li>
-                    <li id="li4OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">4</div>
-                      <span class="text-muted" id="ing4text">Sugar</span>
-                    </li>
-                    <li id="li5OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">5</div>
-                      <span class="text-muted" id="ing5text">Butter</span>
-                    </li>
-                    <li id="li6OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">6</div>
-                      <span class="text-muted" id="ing6text">1 tablespoon palm sugar</span>
-                    </li>
-                    <li id="li7OfTab" class="d-flex align-items-center column-gap-2">
-                      <div class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">7</div>
-                      <span class="text-muted" id="ing7text">Bean sprouts</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Instructions -->
-              <div class="tab-pane card2-style fade" id="pane-instructions" role="tabpanel" tabindex="0">
-                <div class="parent" id="instructionsList">
-                  <div class="d-flex align-items-center column-gap-3 mb-3">
-                    <div class="rounded-4 num-style text-white fs-6 fw-bold d-flex align-items-center justify-content-center">1</div>
-                    <p class="text-muted m-0" id="instr1text">Mix ingredients</p>
-                  </div>
-                  <div class="d-flex align-items-center column-gap-3 mb-3">
-                    <div class="rounded-4 num-style text-white fs-6 fw-bold d-flex align-items-center justify-content-center">2</div>
-                    <p class="text-muted m-0" id="instr2text">Bake 25 min</p>
-                  </div>
-                  <div class="d-flex align-items-center column-gap-3 mb-3">
-                    <div class="rounded-4 num-style text-white fs-6 fw-bold d-flex align-items-center justify-content-center">3</div>
-                    <p class="text-muted m-0" id="instr3text">Add lemon glaze</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Nutrition -->
-              <div class="tab-pane card3-style fade" id="pane-nutrition" role="tabpanel" tabindex="0">
-                <div class="parent row g-2 p-2 m-0">
-                  <div class="lines line1-style d-flex align-items-center justify-content-between px-3 py-2 rounded-3 col-6">
-                    <span class="text-muted span-style">Calories</span>
-                    <span class="fw-bold span2-style" id="calories">540 kcal</span>
-                  </div>
-                  <div class="lines line2-style d-flex align-items-center justify-content-between px-3 py-2 rounded-3 col-6">
-                    <span class="text-muted span-style">Protein</span>
-                    <span class="fw-bold span2-style" id="protein">32g</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Chef Tips -->
-              <div class="tab-pane card4-style fade" id="pane-chef" role="tabpanel" tabindex="0">
-                <div class="parent">
-                  <div class="d-flex align-items-center column-gap-3 rounded-4 mb-2 px-3 py-2">
-                    <span class="rounded-circle d-flex justify-content-center align-items-center"><i class="fa-solid fa-check"></i></span>
-                    <p class="text-muted m-0" id="tip1Text">Don't oversoak noodles or they'll be mushy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Button -->
-            <div class="btn-style border-top pt-3 mt-4">
-              <button class="btn text-white fw-bold w-auto" id="button" onclick="tryRecipe()">
-                <i class="fa-solid fa-arrows-rotate me-1"></i> Try Another Recipe
+            <!-- Action Button -->
+            <div class="pt-3 border-top mt-3">
+              <button class="btn btn-orange text-white fw-bold w-100 py-2 rounded-3 d-flex align-items-center justify-content-center gap-2" id="button" onclick="tryRecipe()">
+                <i class="fa-solid fa-arrows-rotate"></i> Try Another Recipe
               </button>
             </div>
+
           </div>
 
         </div>
       </div>
-    </section>
+
+    </div>
   </main>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
   <script src="js/index.js"></script>
 </body>
 </html>
