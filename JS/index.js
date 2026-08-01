@@ -34,7 +34,6 @@ var recipes = [
       sodium: "890 mg"
     }
   },
-
   {
     name: "Chicken Alfredo",
     desc: "Creamy pasta with grilled chicken and parmesan",
@@ -69,7 +68,6 @@ var recipes = [
       sodium: "950 mg"
     }
   },
-
   {
     name: "Beef Tacos",
     desc: "Crispy tacos filled with seasoned beef and vegetables",
@@ -103,7 +101,6 @@ var recipes = [
       sodium: "780 mg"
     }
   },
-
   {
     name: "Caesar Salad",
     desc: "Fresh romaine lettuce with creamy Caesar dressing",
@@ -134,7 +131,6 @@ var recipes = [
       sodium: "310 mg"
     }
   },
-
   {
     name: "Margherita Pizza",
     desc: "Classic pizza with mozzarella and basil",
@@ -161,7 +157,6 @@ var recipes = [
       sodium: "720 mg"
     }
   },
-
   {
     name: "Grilled Salmon",
     desc: "Perfectly grilled salmon with lemon and herbs",
@@ -187,7 +182,6 @@ var recipes = [
       sodium: "210 mg"
     }
   },
-
   {
     name: "Shrimp Fried Rice",
     desc: "Asian-style fried rice with shrimp and vegetables",
@@ -213,7 +207,6 @@ var recipes = [
       sodium: "900 mg"
     }
   },
-
   {
     name: "French Toast",
     desc: "Golden toast dipped in sweet egg mixture",
@@ -239,7 +232,6 @@ var recipes = [
       sodium: "260 mg"
     }
   },
-
   {
     name: "Greek Salad",
     desc: "Fresh salad with feta and olives",
@@ -248,8 +240,8 @@ var recipes = [
     cookTime: "0 min",
     servings: "2 people",
     review: "4.6 (210 reviews)",
-    alertTitle : "Extended Preparation Time",
-    alertDesc : "This recipe requires more than 45 minutes to prepare. Plan accordingly!",
+    alertTitle: "Extended Preparation Time",
+    alertDesc: "This recipe requires more than 45 minutes to prepare. Plan accordingly!",
     gategories: ["Healthy", "Mediterranean"],
     ingrediants: ["Tomatoes", "Cucumber", "Onion", "Feta", "Olives", "Olive oil"],
     instructions: ["Chop veggies", "Add feta and olives", "Drizzle olive oil"],
@@ -263,7 +255,6 @@ var recipes = [
       sodium: "430 mg"
     }
   },
-
   {
     name: "Butter Chicken",
     desc: "Creamy Indian chicken curry with spices",
@@ -289,7 +280,6 @@ var recipes = [
       sodium: "980 mg"
     }
   },
-
   {
     name: "Sushi Rolls",
     desc: "Japanese rice rolls with fish and vegetables",
@@ -315,7 +305,6 @@ var recipes = [
       sodium: "190 mg"
     }
   },
-
   {
     name: "Chocolate Cake",
     desc: "Soft chocolate cake with rich frosting",
@@ -348,82 +337,98 @@ var recipes = [
       fiber: "3g",
       sodium: "300 mg"
     }
-  },
-]
-
-
+  }
+];
 
 var num = 0;
 
-function tryRecipe(){
-  // 
-  console.log(recipes[num]);
+function tryRecipe() {
+  var currentRecipe = recipes[num];
 
-  document.getElementById("recipeRating").innerHTML = recipes[num].review;
-  document.getElementById("recipeImg").src = recipes[num].image;
-  document.getElementById("prepTime").innerHTML = recipes[num].prepTime;
-  document.getElementById("cookTime").innerHTML = recipes[num].cookTime;
-  document.getElementById("servings").innerHTML = recipes[num].servings;
-  document.getElementById("recipeLevel").innerHTML = recipes[num].gategories[0];
-  document.getElementById("recipeCategory").innerHTML = recipes[num].gategories[1];
-  document.getElementById("recipeTitle").innerHTML = recipes[num].name;
-  document.getElementById("recipeDesc").innerHTML = recipes[num].desc;
+  // Basic Info
+  document.getElementById("recipeRating").innerHTML = currentRecipe.review;
+  document.getElementById("recipeImg").src = currentRecipe.image;
+  document.getElementById("prepTime").innerHTML = currentRecipe.prepTime;
+  document.getElementById("cookTime").innerHTML = currentRecipe.cookTime;
+  document.getElementById("servings").innerHTML = currentRecipe.servings;
+  document.getElementById("recipeLevel").innerHTML = currentRecipe.gategories[0];
+  document.getElementById("recipeCategory").innerHTML = currentRecipe.gategories[1];
+  document.getElementById("recipeTitle").innerHTML = currentRecipe.name;
+  document.getElementById("recipeDesc").innerHTML = currentRecipe.desc;
 
-  //! Ingredients
+  // 1. Ingredients
   var ingredientHTML = "";
-  for(var i = 0; i < recipes[num].ingrediants.length ; i++){
-    ingredientHTML += 
-    `
-      <li id="li1OfTab" class="d-flex align-items-center justify-content-start column-gap-2">
-            <div
-              class="num-style rounded-circle d-flex justify-content-center align-items-center text-white fw-bold">
-              ${i + 1}</div>
-            <span class="text-muted" id="ing1text">${recipes[num].ingrediants[i]}</span>
-      </li>
-    
-    `
-  } 
-
+  for (var i = 0; i < currentRecipe.ingrediants.length; i++) {
+    ingredientHTML += `
+      <li class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">${i + 1}</span>
+        <span class="small text-secondary">${currentRecipe.ingrediants[i]}</span>
+      </li>`;
+  }
   document.getElementById("ingredientsList").innerHTML = ingredientHTML;
 
-
-  //! Instructions
+  // 2. Instructions
   var instructionHTML = "";
-  for(var i = 0 ; i < recipes[num].instructions.length ; i++){
-    instructionHTML += 
-    `
-      <div class="d-flex justify-content-start align-items-center column-gap-3 mb-2 mb-md-4">
-        <div
-          class="rounded-4 num-style text-white fs-5 fw-bold d-flex align-items-center justify-content-center">
-          ${i + 1}</div>
-        <div class="pt-2 pt-md-0">
-          <p class="text-muted m-0" id="instr1text">${recipes[num].instructions[i]}</p>
-        </div>
-      </div>
-    
-    `
-  } 
+  for (var i = 0; i < currentRecipe.instructions.length; i++) {
+    instructionHTML += `
+      <div class="d-flex align-items-start gap-2 mb-2">
+        <span class="badge bg-orange rounded-circle p-1 d-flex align-items-center justify-content-center mt-1" style="width: 22px; height: 22px; min-width: 22px;">${i + 1}</span>
+        <p class="small text-secondary mb-0">${currentRecipe.instructions[i]}</p>
+      </div>`;
+  }
   document.getElementById("instructionsList").innerHTML = instructionHTML;
 
-  //! Alert Logic
-  if (recipes[num].alertTitle && recipes[num].alertDesc) {
-    document.getElementById("alertTitle").innerHTML=recipes[num].alertTitle;
-    document.getElementById("alertDesc").innerHTML=recipes[num].alertDesc;
-    document.getElementById("warning").classList.remove("d-none")
-
-  }else{
-    document.getElementById("warning").classList.add("d-none")
-
+  // 3. Nutrition Tab Dynamic Update
+  var paneNutrition = document.getElementById("pane-nutrition");
+  if (paneNutrition && currentRecipe.nutrition) {
+    paneNutrition.innerHTML = `
+      <div class="row g-2 p-2">
+        <div class="col-6 bg-light p-2 rounded-3 d-flex justify-content-between">
+          <span class="small text-muted">Calories</span>
+          <span class="small fw-bold text-orange">${currentRecipe.nutrition.calories}</span>
+        </div>
+        <div class="col-6 bg-light p-2 rounded-3 d-flex justify-content-between">
+          <span class="small text-muted">Protein</span>
+          <span class="small fw-bold text-orange">${currentRecipe.nutrition.protein}</span>
+        </div>
+        <div class="col-6 bg-light p-2 rounded-3 d-flex justify-content-between">
+          <span class="small text-muted">Carbs</span>
+          <span class="small fw-bold text-orange">${currentRecipe.nutrition.carbohydrates}</span>
+        </div>
+        <div class="col-6 bg-light p-2 rounded-3 d-flex justify-content-between">
+          <span class="small text-muted">Fat</span>
+          <span class="small fw-bold text-orange">${currentRecipe.nutrition.fat}</span>
+        </div>
+      </div>`;
   }
 
-  num++ // 1 
-
-  if(num > recipes.length - 1){
-    num = 0
+  // 4. Chef's Tips Dynamic Update
+  var paneChef = document.getElementById("pane-chef");
+  if (paneChef && currentRecipe.tips) {
+    var tipsHTML = "";
+    for (var j = 0; j < currentRecipe.tips.length; j++) {
+      tipsHTML += `<p class="small text-muted mb-1"><i class="fa-solid fa-check text-success me-1"></i> ${currentRecipe.tips[j]}</p>`;
+    }
+    paneChef.innerHTML = `<div class="p-2">${tipsHTML}</div>`;
   }
-  
+
+  // 5. Alert Logic
+  var warningElem = document.getElementById("warning");
+  if (warningElem) {
+    if (currentRecipe.alertTitle && currentRecipe.alertDesc) {
+      document.getElementById("alertDesc").innerHTML = currentRecipe.alertDesc;
+      warningElem.classList.remove("d-none");
+    } else {
+      warningElem.classList.add("d-none");
+    }
+  }
+
+  // Increment index for next click
+  num++;
+  if (num >= recipes.length) {
+    num = 0;
+  }
 }
 
-
-
-
+// Load first recipe automatically when page loads
+tryRecipe();
