@@ -5,13 +5,15 @@ body {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background: linear-gradient(#fff8ec, #fffaeb, #fffbea);
+  overflow-x: hidden; /* لمنع أي سكرول أفقية زائدة */
 }
 ::selection {
   color: #fff;
   background-color: #3367d1;
 }
 img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   vertical-align: middle;
   object-fit: cover;
 }
@@ -83,10 +85,9 @@ header nav .items .item-2 img {
   height: 25rem;
 }
 /* top info */
-.hero-section .left-side .p-top {
-  width: fit-content;
-  top: 6%;
-  left: 6%;
+.hero-section .left-side {
+  height: 25rem;
+  position: relative; 
 }
 .hero-section .left-side .p-top i {
   font-size: 0.875rem;
